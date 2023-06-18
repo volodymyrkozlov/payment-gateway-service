@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet author="Volodymyr Kozlov" id="1643376310-1">
+        <createTable tableName="cards">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="pan" type="varchar(128)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="expiry" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="card_holder_id" type="bigint">
+                <constraints foreignKeyName="ENaWliBTmA"
+                             references="card_holders(id)"/>
+            </column>
+        </createTable>
+
+        <createIndex tableName="cards" indexName="kowObRVJBB" unique="true">
+            <column name="pan"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

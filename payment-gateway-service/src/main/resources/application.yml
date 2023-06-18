@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /payment-gateway-service
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console.enabled: true
+    console:
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+payment-gateway:
+  sanitizer-character: "*"
+  log-file-path: payment-gateway-service/src/main/resources/log/audit.log
+  card:
+    expiry-format: MMyy
+    expiry-zone-id: UTC

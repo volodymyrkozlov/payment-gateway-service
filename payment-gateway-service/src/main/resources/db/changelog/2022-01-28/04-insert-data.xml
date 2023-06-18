@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet author="Volodymyr Kozlov" id="1643376310-4">
+        <insert tableName="card_holders">
+            <column name="id" value="1"/>
+            <column name="name" value="name"/>
+            <column name="email" value="email"/>
+        </insert>
+
+        <insert tableName="cards">
+            <column name="id" value="1"/>
+            <column name="pan" value="pan"/>
+            <column name="expiry" value="expiry"/>
+            <column name="card_holder_id" value="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
